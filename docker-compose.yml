@@ -7,7 +7,7 @@ services:
     command: sh /entrypoint.sh
     build: ./
     ports:
-      - 8080:8080
+      - 8081:8080
     depends_on:
       - db
     networks:
@@ -20,9 +20,11 @@ services:
     image: mysql:8.0
     networks:
       - app_network
-    volumes:
-       - ./../data/db/mysql:/var/lib/mysql
+    # volumes:
+    #    - ./../data/db/mysql:/var/lib/mysql
     restart: always
+    ports:
+      - 3306:3306
     environment:
       MYSQL_ROOT_PASSWORD: db_root_pass
       MYSQL_DATABASE: db_name

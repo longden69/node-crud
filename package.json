@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/longden69/node-crud/issues"
   },
-  "homepage": "https://github.com/longden69/node-crud#readme"
+  "homepage": "https://github.com/longden69/node-crud#readme",
+  "dependencies": {
+    "mysql2": "^2.3.0"
+  }
 }
