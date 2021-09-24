@@ -1,0 +1,19 @@
+{
+  "name": "crud",
+  "version": "1.0.0",
+  "description": "Sample node crud",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/longden69/node-crud.git"
+  },
+  "author": "LongNN",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/longden69/node-crud/issues"
+  },
+  "homepage": "https://github.com/longden69/node-crud#readme"
+}

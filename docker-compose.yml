@@ -1,0 +1,36 @@
+version: '3.6'
+
+services:
+  web:
+    tty: true
+    stdin_open: true
+    command: sh /entrypoint.sh
+    build: ./
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+    networks:
+      - app_network
+    volumes:
+      - .:/app:cached
+      - node_modules:/app/node_modules
+
+  db:
+    image: mysql:8.0
+    networks:
+      - app_network
+    volumes:
+       - ./../data/db/mysql:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: db_root_pass
+      MYSQL_DATABASE: db_name
+      MYSQL_USER: db_user
+      MYSQL_PASSWORD: db_password
+
+volumes:
+  node_modules:
+networks:
+  app_network:
+    driver: bridge
